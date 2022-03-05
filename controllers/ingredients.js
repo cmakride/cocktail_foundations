@@ -3,7 +3,7 @@ import { Ingredient } from "../models/ingredient.js"
 
 
 function createIngredient(req,res){
-  console.log("INGREDIENT ADDED")
+  
   Ingredient.create(req.body)
   .then(ingredient => res.json(ingredient))
   .catch(err => {
@@ -13,7 +13,7 @@ function createIngredient(req,res){
   }
 
   function ingredientIndex(req,res){
-    console.log("ALL INGREDIENTS")
+    
     Ingredient.find({})
     .then(ingredients => res.json(ingredients))
     .catch(err => {
@@ -23,7 +23,7 @@ function createIngredient(req,res){
   }
 
   function deleteIngredient(req, res) {
-    console.log("DELETED INGREDIENT")
+    
     Ingredient.findByIdAndDelete(req.params.id)
     .then(ingredient => res.json(ingredient))
     .catch(err => {

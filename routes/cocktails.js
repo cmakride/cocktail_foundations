@@ -8,10 +8,11 @@ const router = Router()
 //GET = localhost:3000/cocktails
 router.get('/',cocktailsCtrl.index)
 
-//POST - localhost:3000/tacos
+router.get('/new',cocktailsCtrl.new)
 
+//POST - localhost:3000/cocktails
 //!NEED TO CREATE ANOTHER MIDDLEWARE TO CHECK IF A USER is logged in
-router.post('/',isLoggedIn,cocktailsCtrl.create)
+router.post('/',cocktailsCtrl.create)
 
 
 export{

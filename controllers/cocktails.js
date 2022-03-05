@@ -17,11 +17,29 @@ function index(req, res) {
   //if there is a problem catch that problem and send the error to console
 }
 
+function newCocktail(req,res){
+  res.render('cocktails/new',{
+    title: "Add Cocktail"
+  })
+}
+
+
 function create(req,res){
-  console.log("SANITY")
+  
+  Cocktail.create(req.body)
+  .then(cocktail => {
+    console.log(cocktail)
+    res.redirect('/cocktails')
+  })
+  .catch(err =>{
+    console.log(err)
+    res.redirect("/cocktails")
+  })
+
 }
 
 export{
   index,
-  create
+  create,
+  newCocktail as new
 }

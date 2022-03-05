@@ -2,30 +2,18 @@ import mongoose from "mongoose";
 
 const Schema = mongoose.Schema
 
-const servedInSchema = new Schema({
-  glassware: {
-    name: String, enum: ["Chilled Martini Glass", "On the Rocks", "Neat", "Chilled Coup Glass", "Highball Glass"],
-  },
-  icon: { type: String }
-}, {
-  timestamps: true,
-})
-
-const ingredientSchema = new Schema({
-  name: { type: Schema.Types.ObjectId, ref: "Ingredient" },
-  amount: { type: String },
-
-}, {
-  timestamps: true,
-})
+  //served in options
+  //"Chilled Martini Glass", "On the Rocks", "Neat", "Chilled Coup Glass", "Highball Glass"
+ 
 
 const cocktailSchema = new Schema({
   name: { type: String },
-  ingredients: [ingredientSchema],
-  method: { type: String },
-  garnish: { type: String },
-  servedIn: [servedInSchema],
-  image: { type: String },
+  amounts: [String],
+  ingredients: [{ type: Schema.Types.ObjectId, ref: "Ingredient" }],
+  method: { type: String, default: "Method" },
+  garnish: { type: String, default: "Garnish" },
+  servedIn: {type: String, default: "Served In" },
+  image: { type: String, default: "Image URL" },
 }, {
   timestamps: true,
 })

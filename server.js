@@ -25,6 +25,7 @@ import('./config/passport.js')
 import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as cocktailsRouter } from './routes/cocktails.js'
+import { router as ingredientsRouter } from './routes/ingredients.js'
 import mongoose from 'mongoose'
 
 // create the express app
@@ -71,6 +72,7 @@ app.use(passUserToView)
 app.use('/', indexRouter)
 app.use('/auth', authRouter)
 app.use('/cocktails',cocktailsRouter)
+app.use('/ingredients',ingredientsRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

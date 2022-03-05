@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 
 const ingredientSchema = new Schema({
 name: {type: String},
-image: {type: String}
+
 },{
   timestamps: true,
 })

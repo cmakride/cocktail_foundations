@@ -1,0 +1,69 @@
+<%- include('../partials/html-head') %>
+  <%- include('../partials/nav') %>
+    <main>
+      <form action="/cocktails/<%=cocktail._id%>?_method=PUT" method="POST">
+
+        <!-- ? EDIT NAME -->
+        <label>
+          Name:
+          <input type="text" name="name" autocomplete="off" value="<%= cocktail.name %> ">
+        </label>
+
+        <h3>
+          <%= cocktail.method %>
+        </h3>
+        <h3>Garnish: <%= cocktail.garnish %>
+        </h3>
+        <h3>Served in a <%= cocktail.servedIn %>
+        </h3>
+        <h3>Image = <%= cocktail.image %>
+        </h3>
+
+        <button type="submit">Edit</button>
+      </form>
+
+      <!-- ! EDIT INGREDIENTS -->
+
+      <ul>
+        <% cocktail.ingredients.forEach((ingredient, idx)=> { %>
+          <li>
+            <%= cocktail.amounts[idx] %>
+              <%= ingredient.name %>
+                <form action="/cocktails/<%=cocktail._id%>/ingredients/<%=idx%>?_method=DELETE" method="POST">
+                  <button>X</button>
+                </form>
+          </li>
+          <% }) %>
+      </ul>
+
+      <form id="add-per-to-ingredient" action="/cocktails/<%=cocktail._id%>/ingredients?_method=POST" method="post">
+        <button type="submit">Add Ingredient</button>
+        <select name="ingredientId">
+          <% ingredientsNotInRecipe.forEach(ingredient=> { %>
+            <option value="<%=ingredient._id%>">
+              <%=ingredient.name%>
+            </option>
+            <% }) %>
+        </select>
+        <label>
+          Amount:
+          <input type="text" name="amount" autocomplete="off">
+        </label>
+
+      </form>
+
+      <!-- ! END INGREDIENTS -->
+
+
+      <!-- ? where want to add in editing for just Chris To edit -->
+
+
+
+
+
+
+    </main>
+
+
+
+    <%- include('../partials/footer') %>

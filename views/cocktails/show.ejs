@@ -9,7 +9,7 @@
 <ul>
   <% cocktail.ingredients.forEach((ingredient, idx) => { %>
    <li>
-    <%= cocktail.amount[idx] %>
+    <%= cocktail.amounts[idx] %>
     <%= ingredient.name  %> 
    </li>
   <% }) %>
@@ -21,7 +21,7 @@
 <h3>Image = <%= cocktail.image %> </h3>
 
 <!-- ? where want to add in editing for just Chris To edit -->
-<form action="/cocktails/<%=cocktail._id%>" method="get">
+<form action="/cocktails/<%=cocktail._id%>/edit" method="get">
 <button type="submit">Edit</button>
 </form>
 

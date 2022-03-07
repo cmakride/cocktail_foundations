@@ -13,11 +13,20 @@ router.get('/',cocktailsCtrl.index)
 router.get('/new',cocktailsCtrl.new)
 
 //GET - localhost:3000/cocktails/:id
-router.get("/:id",cocktailsCtrl.show)
+router.get('/:id',cocktailsCtrl.show)
+
+//GET - localhost:3000/cocktails/:id/edit
+router.get('/:id/edit',cocktailsCtrl.edit)
+
+//PUT After editing a cocktail and click edit button - localhost:3000/cocktails/:id
+router.put('/:id',cocktailsCtrl.update)
 
 //POST - localhost:3000/cocktails
 //!NEED TO CREATE ANOTHER MIDDLEWARE TO CHECK IF A USER is logged in
 router.post('/',cocktailsCtrl.create)
+
+//POST Adding Ingredient - localhost:3000/cocktails/:id/ingredients
+router.post('/:id/ingredients', cocktailsCtrl.addToIngredients)
 
 
 export{

@@ -40,6 +40,7 @@ function create(req,res){
 
 function show(req,res){
   Cocktail.findById(req.params.id)
+  .populate("ingredients")
   .then(cocktail => {
     res.render('cocktails/show',{
       cocktail,
@@ -52,9 +53,48 @@ function show(req,res){
   })
 }
 
+function edit(req,res){
+  Cocktail.findById(req.params.id)
+  .populate("ingredients")
+  .exec(function(err,cocktail){
+    Ingredient.find({_id:{$nin:cocktail.ingredients}},function(err,ingredientsNotInRecipe){
+
+      res.render('cocktails/edit',{
+        title: "Cocktail Edit",
+        cocktail,
+        ingredientsNotInRecipe
+      })
+    })
+  })
+}
+
+function update(req,res){
+  console.log("SANITY")
+}
+
+function addToIngredients(req,res){
+  Cocktail.findById(req.params.id)
+  .then(cocktail =>{
+    cocktail.ingredients.push(req.body.ingredientId)
+    cocktail.amounts.push(req.body.amount)
+    cocktail.save()
+    .then(()=>{
+      res.redirect(`/cocktails/${cocktail._id}/edit`)
+    })
+  })
+  .catch(err =>{
+    console.log(err)
+    res.redirect("/cocktails")
+  })
+}
+
+
 export{
   index,
   create,
   newCocktail as new,
-  show
+  show,
+  edit,
+  addToIngredients,
+  update
 }

@@ -73,7 +73,15 @@ function update(req,res){
   console.log("REQ PARAMS",req.params)
   Cocktail.findById(req.params.id)
   .then(cocktail =>{
-
+    cocktail.updateOne(req.body,{new:true})
+    .then(cocktail =>{
+      console.log(cocktail)
+      res.redirect(`/cocktails/${req.params.id}`)
+    })
+  })
+  .catch(err =>{
+    console.log(err)
+    res.redirect("/cocktails")
   })
 }
 

@@ -119,6 +119,18 @@ function deleteRecipeIngredient(req,res){
   })
 }
 
+function deleteCocktail(req, res) {
+  Cocktail.findByIdAndDelete(req.params.id)
+  .then(cocktail =>{
+    res.redirect('/cocktails')
+  })
+  .catch(err =>{
+    console.log(err)
+    res.redirect("/cocktails")
+  })
+  
+}
+
 
 export{
   index,
@@ -128,5 +140,6 @@ export{
   edit,
   addToIngredients,
   update,
-  deleteRecipeIngredient
+  deleteRecipeIngredient,
+  deleteCocktail
 }

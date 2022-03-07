@@ -31,6 +31,9 @@ router.post('/:id/ingredients', cocktailsCtrl.addToIngredients)
 //DELETE Deleting Ingredient - localhost:3000/cocktails/:id/ingredients/ingredientIndex
 router.delete('/:id/ingredients/:idx',cocktailsCtrl.deleteRecipeIngredient)
 
+//DELETE Cocktail - localhost:3000/cocktails/:id
+router.delete('/:id',cocktailsCtrl.deleteCocktail)
+
 
 export{
   router

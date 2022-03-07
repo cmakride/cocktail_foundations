@@ -1,0 +1,35 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+
+<h3><%= cocktail.name %> </h3>
+
+<!-- ! listing ingredient -->
+<ul>
+  <% cocktail.ingredients.forEach((ingredient, idx) => { %>
+   <li>
+    <%= cocktail.amount[idx] %>
+    <%= ingredient.name  %> 
+   </li>
+  <% }) %>
+  </ul>
+
+<h3><%= cocktail.method %></h3>
+<h3>Garnish: <%= cocktail.garnish %> </h3>
+<h3>Served in a <%= cocktail.servedIn %> </h3>
+<h3>Image = <%= cocktail.image %> </h3>
+
+<!-- ? where want to add in editing for just Chris To edit -->
+<form action="/cocktails/<%=cocktail._id%>" method="get">
+<button type="submit">Edit</button>
+</form>
+
+
+
+
+</section>
+
+
+
+<%- include('../partials/footer') %>

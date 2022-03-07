@@ -38,8 +38,23 @@ function create(req,res){
 
 }
 
+function show(req,res){
+  Cocktail.findById(req.params.id)
+  .then(cocktail => {
+    res.render('cocktails/show',{
+      cocktail,
+      title: "Show Cocktail"
+    })
+  })
+  .catch(err =>{
+    console.log(err)
+    res.redirect("/cocktails")
+  })
+}
+
 export{
   index,
   create,
-  newCocktail as new
+  newCocktail as new,
+  show
 }

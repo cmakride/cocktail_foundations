@@ -1,23 +1,28 @@
 <%- include('../partials/html-head') %>
   <%- include('../partials/nav') %>
     <main>
-      <form action="/cocktails/<%=cocktail._id%>?_method=PUT" method="POST">
-
-        <!-- ? EDIT NAME -->
+      <form id ="edit" action="/cocktails/<%=cocktail._id%>?_method=PUT" method="POST">
         <label>
           Name:
           <input type="text" name="name" autocomplete="off" value="<%= cocktail.name %> ">
         </label>
 
-        <h3>
-          <%= cocktail.method %>
-        </h3>
-        <h3>Garnish: <%= cocktail.garnish %>
-        </h3>
-        <h3>Served in a <%= cocktail.servedIn %>
-        </h3>
-        <h3>Image = <%= cocktail.image %>
-        </h3>
+        <label>
+          Method:
+          <input type="text" name="method" autocomplete="off" value="<%= cocktail.method %> ">
+        </label>
+        <label>
+          Garnish:
+          <input type="text" name="garnish" autocomplete="off" value="<%= cocktail.garnish %> ">
+        </label>
+        <label>
+          Served In:
+          <input type="text" name="servedIn" autocomplete="off" value="<%= cocktail.servedIn %> ">
+        </label>
+        <label>
+          image URL:
+          <input type="text" name="image" autocomplete="off" value="<%= cocktail.image %> ">
+        </label>
 
         <button type="submit">Edit</button>
       </form>

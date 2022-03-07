@@ -39,6 +39,13 @@ main {
   flex-direction: column;
 }
 
+#edit{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 h1 {
   font-size: 3.6rem;
 }

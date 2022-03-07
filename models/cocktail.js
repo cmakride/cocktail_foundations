@@ -10,6 +10,7 @@ const cocktailSchema = new Schema({
   name: { type: String },
   amounts: [String],
   ingredients: [{ type: Schema.Types.ObjectId, ref: "Ingredient" }],
+
   method: { type: String, default: "Method" },
   garnish: { type: String, default: "Garnish" },
   servedIn: {type: String, default: "Served In" },

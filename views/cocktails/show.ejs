@@ -19,6 +19,8 @@
 <h3>Garnish: <%= cocktail.garnish %> </h3>
 <h3>Served in a <%= cocktail.servedIn %> </h3>
 <h3>Image = <%= cocktail.image %> </h3>
+<img src="<%=cocktail.image%>" alt="Cocktail Image">
+<!-- cocktail.image -->
 
 <!-- ? where want to add in editing for just Chris To edit -->
 <form action="/cocktails/<%=cocktail._id%>/edit" method="get">

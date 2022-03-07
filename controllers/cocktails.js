@@ -69,7 +69,12 @@ function edit(req,res){
 }
 
 function update(req,res){
-  console.log("SANITY")
+  console.log("REQ BODY",req.body)
+  console.log("REQ PARAMS",req.params)
+  Cocktail.findById(req.params.id)
+  .then(cocktail =>{
+
+  })
 }
 
 function addToIngredients(req,res){

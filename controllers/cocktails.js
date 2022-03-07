@@ -88,6 +88,24 @@ function addToIngredients(req,res){
   })
 }
 
+function deleteRecipeIngredient(req,res){
+  console.log("Cocktail ID",req.params.id)
+  console.log("INGREDIENT INDEX",req.params.idx)
+  Cocktail.findById(req.params.id)
+  .then(cocktail => {
+    cocktail.amounts.splice(parseInt(req.params.idx),1)
+    cocktail.ingredients.splice(parseInt(req.params.idx),1)
+    cocktail.save()
+    .then(()=>{
+      res.redirect(`/cocktails/${cocktail._id}/edit`)
+    })
+  })
+  .catch(err =>{
+    console.log(err)
+    res.redirect("/cocktails")
+  })
+}
+
 
 export{
   index,
@@ -96,5 +114,6 @@ export{
   show,
   edit,
   addToIngredients,
-  update
+  update,
+  deleteRecipeIngredient
 }

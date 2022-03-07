@@ -28,6 +28,9 @@ router.post('/',cocktailsCtrl.create)
 //POST Adding Ingredient - localhost:3000/cocktails/:id/ingredients
 router.post('/:id/ingredients', cocktailsCtrl.addToIngredients)
 
+//DELETE Deleting Ingredient - localhost:3000/cocktails/:id/ingredients/ingredientIndex
+router.delete('/:id/ingredients/:idx',cocktailsCtrl.deleteRecipeIngredient)
+
 
 export{
   router

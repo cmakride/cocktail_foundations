@@ -6,8 +6,13 @@ import { Cocktail } from "../models/cocktail.js"
 
 const router = Router()
 
+
+
 //GET - localhost:3000/cocktails
 router.get('/',cocktailsCtrl.index)
+
+//GET - localhost:3000/cocktails/search
+router.get('/search',cocktailsCtrl.searchIndex)
 
 //GET - localhost:3000/cocktails/new
 router.get('/new',cocktailsCtrl.new)

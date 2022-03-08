@@ -1,6 +1,8 @@
 import { Cocktail } from "../models/cocktail.js";
 import { Ingredient } from "../models/ingredient.js";
 
+
+
 function index(req, res) {
   Cocktail.find({})
   .then(cocktails => {
@@ -16,6 +18,29 @@ function index(req, res) {
   })
   //if there is a problem catch that problem and send the error to console
 }
+
+//!SEARCH BAR INDEX
+function searchIndex(req, res) {
+  
+  console.log(req.query.name)
+  let modelQuery = req.query.name
+    ? { name: new RegExp(req.query.name, 'i') }
+    : {}
+  // Sorting by name
+  Cocktail.find(modelQuery)
+    .sort("name")
+    .exec(function (err, cocktails) {
+      if (err) return next(err)
+      // Passing students and name, for use in the EJS
+      res.render("cocktails/index", { 
+        cocktails, 
+        name: req.query.name,
+        title: "Search"
+        
+      })
+    })
+}
+//! End of search bar index
 
 function newCocktail(req,res){
   res.render('cocktails/new',{
@@ -132,6 +157,7 @@ function deleteCocktail(req, res) {
 }
 
 
+
 export{
   index,
   create,
@@ -141,5 +167,7 @@ export{
   addToIngredients,
   update,
   deleteRecipeIngredient,
-  deleteCocktail
+  deleteCocktail,
+  searchIndex,
+  
 }

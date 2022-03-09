@@ -1,12 +1,18 @@
 <%- include('../partials/html-head') %>
   <link id="favicon" rel="icon" href="images/Favicon_Martini_Glass.png" type="image/png" sizes="32x32">
   <link rel="stylesheet" href="/stylesheets/cards.css" />
+  <script 
+		src="https://kit.fontawesome.com/4da7a940f0.js"
+		crossorigin="anonymous"
+	></script>
   </head>
 
   <body>
 
 
     <nav>
+      <ul class="nav__links">
+        <li>
       <% if (user) { %>
         <a href="/auth/logout">
           <button type="submit">Logout</button>
@@ -18,9 +24,12 @@
             </button>
           </a>
           <% } %>
-            <a href="/cocktails">All Cocktails</a>
-            <a href="/cocktails/new">Add Cocktail</a>
-            <a href="/flashcards">Flashcards</a>
+        </li>
+
+         <li><a href="/cocktails">All Cocktails</a></li>
+         <li><a href="/cocktails/new">Add Cocktail</a></li>
+         <li><a href="/flashcards">Flashcards</a></li>
+          </ul>
     </nav>
 
 

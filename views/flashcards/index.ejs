@@ -1,15 +1,27 @@
 <%- include('../partials/html-head') %>
 <link id="favicon" rel="icon" href="images/Favicon_Martini_Glass.png" type="image/png" sizes="32x32">
-<script defer src="/javascript/main.js"></script>
+<script defer src="./javascript/main.js"></script>
+<link rel="stylesheet" href="/stylesheets/cards.css" />
 <%- include('../partials/nav') %>
 
 
 
 <main>
 
-<% cocktails.forEach(cocktail => { %>
+<% cocktails.forEach((cocktail,idx) => { %>
  
-<h1><%= cocktail.name %> </h1>
+  <div id = "cocktail_0<%=idx%>" class="hidden">
+    <div class="card">
+      <img src="/images/cocktails/cocktail_gin_tonic.png">
+      <div class="info">
+        <h1>
+          <a href="/cocktails/<%=cocktail._id%>">
+            <%= cocktail.name %>
+          </a>
+        </h1>
+      </div>
+    </div>
+  </div>
 
 
 <% }) %>

@@ -8,6 +8,7 @@ import logger from 'morgan'
 import methodOverride from 'method-override'
 import passport from 'passport'
 import { passUserToView } from "./middleware/middleware.js"
+import mongoose from 'mongoose'
 
 // connect to MongoDB with mongoose
 import('./config/database.js')
@@ -27,7 +28,7 @@ import { router as authRouter } from './routes/auth.js'
 import { router as cocktailsRouter } from './routes/cocktails.js'
 import { router as ingredientsRouter } from './routes/ingredients.js'
 import { router as flashcardsRouter } from './routes/flashcards.js'
-import mongoose from 'mongoose'
+
 
 // create the express app
 const app = express()

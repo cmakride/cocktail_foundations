@@ -1,5 +1,6 @@
 import { Cocktail } from "../models/cocktail.js";
 import { Ingredient } from "../models/ingredient.js";
+import { Profile } from "../models/profile.js"
 
 
 
@@ -51,6 +52,12 @@ function newCocktail(req,res){
 
 function create(req,res){
   
+  if(req.user.profile){
+  // req.body.bartender = req.user.profile
+  }
+  
+  
+  
   Cocktail.create(req.body)
   .then(cocktail => {
     console.log(cocktail)
@@ -66,6 +73,7 @@ function create(req,res){
 function show(req,res){
   Cocktail.findById(req.params.id)
   .populate("ingredients")
+  .populate("bartender")
   .then(cocktail => {
     res.render('cocktails/show',{
       cocktail,

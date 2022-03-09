@@ -23,7 +23,12 @@
 <img src="<%=cocktail.image%>" alt="Cocktail Image">
 <!-- cocktail.image -->
 
-<!-- ? where want to add in editing for just Chris To edit -->
+<% if(cocktail.bartender?.name){ %> 
+<h3>Bartender: <%=cocktail.bartender.name%></h3>
+<% } %> 
+
+<!-- ? Adding a ? if cocktail.bartender does not exist. ABOVE -->
+
 <form action="/cocktails/<%=cocktail._id%>/edit" method="get">
 <button type="submit">Edit</button>
 </form>

@@ -1,4 +1,4 @@
-let array = new Array(7).fill(null)
+let array = new Array(3).fill(null)
 
 
 init()
@@ -18,6 +18,7 @@ if(idx === num){
 }
 })
 //pick a random cocktail
-
-
 }
+
+//!event listener 
+// crossHairButton.addEventListener("click", (evt) => {

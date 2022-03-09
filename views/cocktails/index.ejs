@@ -1,31 +1,54 @@
 <%- include('../partials/html-head') %>
   <link id="favicon" rel="icon" href="images/Favicon_Martini_Glass.png" type="image/png" sizes="32x32">
   <link rel="stylesheet" href="/stylesheets/cards.css" />
-  <%- include('../partials/nav') %>
+  </head>
 
-    <!-- !Search Bar -->
+  <body>
+
+
+    <nav>
+      <% if (user) { %>
+        <a href="/auth/logout">
+          <button type="submit">Logout</button>
+        </a>
+        <% } else { %>
+          <a href="/auth/google" class="siwg-link">
+            <button type="submit" class="siwg">
+              <img id="siwg-image" alt="Sign in with Google" />
+            </button>
+          </a>
+          <% } %>
+            <a href="/cocktails">All Cocktails</a>
+            <a href="/cocktails/new">Add Cocktail</a>
+            <a href="/flashcards">Flashcards</a>
+    </nav>
+
+
+    <section id="searchbar">
+      <!-- !Search Bar -->
       <!-- class = "col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" -->
       <form action="/cocktails/search" method="GET" class="">
         <input id="search" class="form-control form-control-dark" type="search" name="name" placeholder="Search name..."
           value="<%=cocktails.name%>" autocomplete="off" />
       </form>
       <!-- !End Search Bar -->
+    </section>
 
-      <h1>Cocktails</h1>
+    <section>
 
       <% cocktails.forEach(cocktail=> { %>
 
         <div class="wrapper">
-          <div class="card">
-            <img src="/images/cocktails/cocktail_gin_tonic.png">
-            <div class="info">
-              <h1>
-                <a href="/cocktails/<%=cocktail._id%>">
+          <a style="text-decoration: none" href="/cocktails/<%=cocktail._id%>">
+            <div class="card">
+              <img src="/images/cocktails/cocktail_gin_tonic.png">
+              <div class="info">
+                <h1>
                   <%= cocktail.name %>
-                </a>
-              </h1>
+                </h1>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
 
         <% }) %>

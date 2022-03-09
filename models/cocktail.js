@@ -15,7 +15,7 @@ const cocktailSchema = new Schema({
   garnish: { type: String, default: "Garnish" },
   servedIn: {type: String, default: "Served In" },
   image: { type: String, default: "Image URL" },
-  bartender:{ type: mongoose.Schema.Types.ObjectId, ref: 'Profile' },
+  bartender:{ type: Schema.Types.ObjectId, ref: 'Profile' },
 }, {
   timestamps: true,
 })

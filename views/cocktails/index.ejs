@@ -1,5 +1,5 @@
 <%- include('../partials/html-head') %>
- 
+
   </head>
 
   <body>
@@ -26,22 +26,22 @@
       <div class="google_signIn">
         <% if (user) { %>
           <a href="/auth/logout">
-            <button class="img-wrap"type="submit">
+            <button class="img-wrap" type="submit">
               <% if (user?.profile.avatar) { %>
-                
-                  <img src="<%= user.profile.avatar %>" alt="user" />
-                
+
+                <img src="<%= user.profile.avatar %>" alt="user" />
+
                 <% } %>
             </button>
           </a>
-          
-        <% } else { %>
-                <a href="/auth/google">
-                  <button class="img-wrap" type="submit">
-                    <img src="/images/auth/google/google_G.png" alt="Logout">
-                  </button>
-                </a>
-                <% } %>
+
+          <% } else { %>
+            <a href="/auth/google">
+              <button class="img-wrap" type="submit">
+                <img src="/images/auth/google/google_G.png" alt="Logout">
+              </button>
+            </a>
+            <% } %>
       </div>
 
 
@@ -49,15 +49,17 @@
 
 
 
-    
-      <!-- !Search Bar -->
-      <section id="searchbar"></section>
-      <form action="/cocktails/search" method="GET" class="">
-        <input id="search" class="form-control form-control-dark" type="search" name="name" placeholder="Search name..."
-          value="<%=cocktails.name%>" autocomplete="off" />
-      </form>
-      <!-- !End Search Bar -->
+
+    <!-- !Search Bar -->
+    <section id="searchbar">
+    <form class="search-bar" action="/cocktails/search" method="GET">
+      <input id="search" class="form-control form-control-dark" type="search" name="name" placeholder="Search Cocktail..."
+        value="<%=cocktails.name%>" autocomplete="off" />
+        <button type="submit"><img src="/images/assets/search.png"></button>
+    </form>
+    <!-- !End Search Bar -->
     </section>
+
 
     <section>
 

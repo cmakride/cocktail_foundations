@@ -29,9 +29,14 @@
 
 <!-- ? Adding a ? if cocktail.bartender does not exist. ABOVE -->
 
-<form action="/cocktails/<%=cocktail._id%>/edit" method="get">
-<button type="submit">Edit</button>
-</form>
+
+ 
+  <% if(cocktail.bartender.equals(user?.profile._id)) {%>
+    <form action="/cocktails/<%=cocktail._id%>/edit" method="get">
+    <button type="submit">Edit</button>
+    </form>
+  <% } %>
+
 
 
 

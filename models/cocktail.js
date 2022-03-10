@@ -9,13 +9,13 @@ const Schema = mongoose.Schema
 const cocktailSchema = new Schema({
   name: { type: String },
   amounts: [String],
-  ingredients: [{ type: Schema.Types.ObjectId, ref: "Ingredient" }],
+  ingredients: [{ type: Schema.Types.ObjectId, ref: "Ingredient"}],
 
   method: { type: String, default: "Method" },
   garnish: { type: String, default: "Garnish" },
   servedIn: {type: String, default: "Served In" },
   image: { type: String, default: "Image URL" },
-  bartender:{ type: Schema.Types.ObjectId, ref: 'Profile' },
+  bartender:{ type: Schema.Types.ObjectId, ref: 'Profile', default: null,},
 }, {
   timestamps: true,
 })

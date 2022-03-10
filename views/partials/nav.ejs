@@ -2,30 +2,48 @@
 </head>
 <body>
   
-
   <nav class="nav">
-    
-    <% if (user) { %>
-      <a href="/auth/logout">
-        <button type="submit">Logout</button>
-      </a>
-    <% } else { %>
-      <a href="/auth/google" class="siwg-link">
-        <button type="submit" class="siwg">
-          <img id="siwg-image" alt="Sign in with Google" />
-        </button>
-      </a>
-    <% } %>
-    <a href="/cocktails">All Cocktails</a>
-    <a href="/cocktails/new">Add Cocktail</a>
-    <a href="/flashcards">Flashcards</a>
+    <header class="logo">
+      <h3>Cocktail Foundations</h3>
+    </header>
 
-    
+    <ul class="nav__links">
+      <li>
+        <a style="text-decoration: none" href="/cocktails">All Cocktails</a>
+      </li>
+      <li>
+        <a style="text-decoration: none" href="/cocktails/new">Add Cocktail</a>
+      </li>
+      <li>
+        <a style="text-decoration: none" href="/flashcards">Flashcards</a>
+      </li>
 
-      
-    
+    </ul>
+
+    <div class="google_signIn">
+      <% if (user) { %>
+        <a href="/auth/logout">
+          <button class="img-wrap"type="submit">
+            <% if (user?.profile.avatar) { %>
+              
+                <img src="<%= user.profile.avatar %>" alt="user" />
+              
+              <% } %>
+          </button>
+        </a>
+        
+      <% } else { %>
+              <a href="/auth/google">
+                <button class="img-wrap" type="submit">
+                  <img src="/images/auth/google/google_G.png" alt="Logout">
+                </button>
+              </a>
+              <% } %>
+    </div>
+
 
   </nav>
+  
   <section>
 
   

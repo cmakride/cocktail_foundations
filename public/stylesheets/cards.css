@@ -98,6 +98,7 @@ section {
   position: relative;
   display: flex;
   flex-direction: row;
+  border-radius: 10%;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;

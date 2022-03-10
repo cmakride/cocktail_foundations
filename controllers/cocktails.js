@@ -51,9 +51,10 @@ function newCocktail(req,res){
 
 
 function create(req,res){
+  console.log(req.user)
   
-  if(req.user.profile){
-  // req.body.bartender = req.user.profile
+  if(req.user?.profile){
+  req.body.bartender = req.user.profile
   }
   
   

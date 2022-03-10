@@ -3,14 +3,14 @@ import { Ingredient } from "../models/ingredient.js";
 
 
 function index(req,res){
-  //!getting an array of every cocktail's ID
-let cards = []
-Cocktail.find({})
+
+
+//!Find all the cocktails that have bartender ID of the User. That User's Cocktails
+Cocktail.find({bartender : req.user.profile})
 
 .then(cocktails =>{
   res.render('flashcards/index',{
     cocktails,
-    
     title: 'flashcards'
   })
 })

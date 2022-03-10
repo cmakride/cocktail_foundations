@@ -6,7 +6,7 @@
 This app is for studying cocktail recipes and being inspired by other cocktail creations. When you start at a new bar, you have to memorize all the signature cocktails. This app simplifies that process. 
 
 ## How To Use:
-1. login to a google account and create a cocktail. 
+1. Login to a google account and create a cocktail. 
 2. Find your cocktail and click to edit it.
 3. Fill out your cocktail's recipe and other descriptions, include a picture if you have one. (I would recommend taking actual pictures of your bar's drinks as they are made, this makes the memorization process more effective.) 
 4. Proceed to the flashcards section where it will browse through your personal flashcards. 

@@ -1,32 +1,42 @@
 
-
+//Variables
 let currentIdx = 0
+let array = []
+let arrayIndexes = []
 
 //CACHED ELEMENTS Getting Main and getting number of children representing number of cocktails
 const cocktailBin = document.querySelector("main")
-const cocktailCount = cocktailBin.children.length
+const cocktailCount = cocktailBin.children.length - 1
+const nextButton = document.getElementById("next-flashcard")
+const refreshBtn = document.getElementById("refresh")
+
+//Event Listeners
+nextButton.addEventListener('click',(evt)=>{
+  
+  console.log(currentIdx)
+  console.log(cocktailCount)
+  
+  if(currentIdx < cocktailCount){
+    currentIdx++
+    render()
+  }else if(currentIdx === cocktailCount){
+    nextButton.className = "hidden"
+    refreshBtn.className = "show"
+  }
+  
+})
 
 
 
-let array = []
-
-let arrayIndexes = []
-
-
-
-
+//Functions
 init()
 
 
-//make all classes hidden
 
-//creates an array of indexs picked at random. with length of cocktailCount
 function init() {
   for (i = 0; i < cocktailCount; i++) {
     arrayIndexes.push(i)
   }
-  console.log(arrayIndexes)
-
   while (arrayIndexes.length > 0) {
     //!selects random index
     let num = Math.floor(Math.random() * arrayIndexes.length)
@@ -36,14 +46,19 @@ function init() {
     arrayIndexes.splice(num, 1)
   }
   //! result is an array of same length as #cocktails with random index numbers
-  console.log(array)
+render()
 
-  //!Making sure all cocktails are hidden except for index[0] from array
+}
+
+function render(){
+  //?Making sure all cocktails are hidden except for index[currentIDX] from array
   array.forEach((div, idx) => {
     const element = document.querySelector(`#cocktail_0${idx}`)
-    if (idx === array[0]) {
+    if (idx === array[currentIdx]) {
       element.className = "wrapper"
     }
+    else{
+      element.className = "hidden"
+    }
   })
-
 }

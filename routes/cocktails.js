@@ -1,7 +1,6 @@
 import { Router } from "express"
 import * as cocktailsCtrl from "../controllers/cocktails.js"
 import { isLoggedIn } from '../middleware/middleware.js'
-import { Cocktail } from "../models/cocktail.js"
 
 
 const router = Router()
@@ -28,7 +27,7 @@ router.put('/:id',cocktailsCtrl.update)
 
 //POST - localhost:3000/cocktails
 //!NEED TO CREATE ANOTHER MIDDLEWARE TO CHECK IF A USER is logged in
-router.post('/',cocktailsCtrl.create)
+router.post('/',isLoggedIn, cocktailsCtrl.create)
 
 //POST Adding Ingredient - localhost:3000/cocktails/:id/ingredients
 router.post('/:id/ingredients', cocktailsCtrl.addToIngredients)

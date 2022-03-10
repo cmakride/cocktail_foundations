@@ -1,70 +1,41 @@
-# MEN Stack with OAuth Template
+# Cocktail Foundations
 
-This is a MEN Stack template that includes OAuth.
+## [Link To The App Here](https://cocktail-foundations.herokuapp.com/cocktails "Cocktail Foundations").
 
-Use this to go build things! 🚀
+## About:
+This app is for studying cocktail recipes and being inspired by other cocktail creations. When you start at a new bar, you have to memorize all the signature cocktails. This app simplifies that process. 
 
-## To Use This Template
+## How To Use:
+1. login to a google account and create a cocktail. 
+2. Find your cocktail and click to edit it.
+3. Fill out your cocktail's recipe and other descriptions, include a picture if you have one. (I would recommend taking actual pictures of your bar's drinks as they are made, this makes the memorization process more effective.) 
+4. Proceed to the flashcards section where it will browse through your personal flashcards. 
 
-__Replace `<name-of-your-app-here>` in the commands below with the name of your app!__
+If you want to study the "foundation cocktails" there is a foundation cocktail study tab, these are the core cocktails that every bartender should know taken from "How To Be A Successful Bartender" online course on Udemy.com. Lastly all of the cocktails made by Bartender's around the world will be displayed on the “All Cocktails” tab.  Take a look at your creations or get inspired by other bartender's cocktails. 
 
-```bash
-git clone https://github.com/SEI-Remote/men-stack-oauth-template.git <name-of-your-app-here>
-cd <name-of-your-app-here>
-```
+![alt text](./public/images/assets/rm_01.png)
 
-Once you are in the project directory:
+## Additional Information:
+Another Reason this app was created; While bartending you sometimes get a request for a drink that you know exists but are not exactly sure of the recipe. You then proceed to search on your phone for this drink and find all these websites with ads attached to them and have to do extra work to scroll down to locate the actual recipe. This app gets straight to the point. The home page is a large search bar where you can search for the cocktail you need and get the recipe with one click.
 
-```bash
-rm -rf .git
-```
+## Technologies Used:
 
-Here's what your command line output should like after this step (note that the indicator that we are in a git repository is gone!)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![CSS](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
+![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![Adobe Photoshop](https://img.shields.io/badge/adobe%20photoshop-%2331A8FF.svg?style=for-the-badge&logo=adobe%20photoshop&logoColor=white)
 
-<img src="https://i.imgur.com/L47kNOZ.png" alt="The command line before and after running the rm -rf .git command. Before git:(main) is visible indiating that the directory contains a git repository, after the command it is not.">
+                   
+## Future Enhancements:
 
-Re-initialize a git repository:
+1. light/dark mode
+2. FlashCard Flip Animation
+3. Mobile Response
+4. Large Screen Response
 
-```bash
-git init
-```
-Use whatever method you'd like to get your project on GitHub. If you're looking for speed though use the GitHub CLI to create a new project repository on GitHub:
 
-```bash
-gh repo create <name-of-your-app-here> --public --source .
-```
-Check out the docs [here](https://cli.github.com/manual/gh_repo_create) if you want to learn more about this command. 
 
-Run npm i to fetch the template's dependencies:
-
-```bash
-npm i
-```
-
-touch a .env file:
-
-```bash
-touch .env
-```
-
-Fill it with the following:
-
-```
-DATABASE_URL=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-GOOGLE_CALLBACK=http://localhost:3000/auth/google/oauth2callback
-GOOGLE_CLIENT_ID=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-GOOGLE_SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-SESSION_SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-
-Replace the `DATABASE_URL`, `GOOGLE_CLIENT_ID`, `GOOGLE_SECRET`, and `SESSION_SECRET` with values that you provide.
-
-Delete this README.md and finally, make an initial commit:
-
-```bash
-git add .
-git commit -m "initial commit"
-git push -u origin main
-```
-
-You're done!

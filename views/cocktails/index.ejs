@@ -1,36 +1,54 @@
 <%- include('../partials/html-head') %>
   <link id="favicon" rel="icon" href="images/Favicon_Martini_Glass.png" type="image/png" sizes="32x32">
   <link rel="stylesheet" href="/stylesheets/cards.css" />
-  <script 
-		src="https://kit.fontawesome.com/4da7a940f0.js"
-		crossorigin="anonymous"
-	></script>
+  <script src="https://kit.fontawesome.com/4da7a940f0.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
 
 
-    <nav>
+    <nav class="nav">
+      <header class="logo">
+        <h3>Cocktail Foundations</h3>
+      </header>
+
       <ul class="nav__links">
         <li>
-      <% if (user) { %>
-        <a href="/auth/logout">
-          <button type="submit">Logout</button>
-        </a>
-        <% } else { %>
-          <a href="/auth/google" class="siwg-link">
-            <button type="submit" class="siwg">
-              <img id="siwg-image" alt="Sign in with Google" />
-            </button>
-          </a>
-          <% } %>
+          <a style="text-decoration: none" href="/cocktails">All Cocktails</a>
+        </li>
+        <li>
+          <a style="text-decoration: none" href="/cocktails/new">Add Cocktail</a>
+        </li>
+        <li>
+          <a style="text-decoration: none" href="/flashcards">Flashcards</a>
         </li>
 
-         <li><a href="/cocktails">All Cocktails</a></li>
-         <li><a href="/cocktails/new">Add Cocktail</a></li>
-         <li><a href="/flashcards">Flashcards</a></li>
-          </ul>
+      </ul>
+
+      <div class="google_signIn">
+        <% if (user) { %>
+          <a href="/auth/logout">
+            <button class="img-wrap"type="submit">
+              <% if (user?.profile.avatar) { %>
+                
+                  <img src="<%= user.profile.avatar %>" alt="user" />
+                
+                <% } %>
+            </button>
+          </a>
+          
+        <% } else { %>
+                <a href="/auth/google">
+                  <button class="img-wrap" type="submit">
+                    <img src="/images/auth/google/google_G.png" alt="Logout">
+                  </button>
+                </a>
+                <% } %>
+      </div>
+
+
     </nav>
+
 
 
     <section id="searchbar">

@@ -1,5 +1,53 @@
-html {
-  box-sizing: border-box
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+
+html{
+  box-sizing: border-box;
+  background-color: rgb(45, 45, 45);
+}
+
+.nav,li,a{
+  font-family: "Montserrat",sans-serif;
+  font-size: 2rem;
+  color: #edf0f1
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 5%;
+}
+
+.nav__links{
+  list-style: none;
+}
+.nav__links li{
+  display: inline-block;
+  padding: 0px 20px;
+}
+.nav__links li a{
+  transition: all 0.3s ease 0s;
+}
+.nav__links li a:hover{
+  color:#0088a9
+}
+
+.img-wrap {
+  width: 50px;
+  height: 50px;
+  border-radius: 20%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+  margin: 0;
+}
+
+.img-wrap > img {
+  width:auto;
+  height: 100%;
 }
 
 /* The Universal Selector */
@@ -16,9 +64,7 @@ html {
 :root {
     font-size: 62.5%
 }
-body{
-  background: #222;
-}
+
 
 section {
   width: 100%;

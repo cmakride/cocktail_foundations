@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster+Two:wght@400;700&family=Montserrat:wght@500&display=swap');
+
+/* The Universal Selector */
+*, /* All elements*/
+*::before, /* All ::before pseudo-elements */
+*::after { /* All ::after pseudo-elements */
+  /* height & width will now include border & padding by default
+     but can be over-ridden as needed */
+  box-sizing: inherit;
+}
+
+/* resets font size to be 62.5% of the user preference - 
+     in most browser configurations this will be 10px */
+:root {
+    font-size: 62.5%
+}
+
+html{
+  box-sizing: border-box;
+  background-color: rgb(45, 45, 45);
+}
+
+/* * Start of Nav Bar Styling */
+.nav,li,a{
+  font-family: "Montserrat",sans-serif;
+  font-size: 2rem;
+  color: #edf0f1
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 5%;
+}
+
+.nav__links{
+  list-style: none;
+}
+.nav__links li{
+  display: inline-block;
+  padding: 0px 20px;
+}
+.nav__links li a{
+  transition: all 0.3s ease 0s;
+}
+.nav__links li a:hover{
+  color:#0088a9
+}
+
+.img-wrap {
+  width: 50px;
+  height: 50px;
+  border-radius: 20%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+  margin: 0;
+}
+
+.img-wrap > img {
+  width:auto;
+  height: 100%;
+}
+/* * End of Nav Bar Styling */
+
+/* !Start of Card display */
+.card{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 300px 1fr auto;
+  background: rgb(33, 33, 33);
+  border-radius: 10px;
+  color: rgb(247, 242, 234);
+}
+
+/* little less than 900 pixels */
+
+  .card__image{
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    background: no-repeat center center/cover;
+  }
+
+  .card__content{
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    padding:1.5rem;
+
+    /* !This will be changed for edit form */
+    justify-self: center;
+  }
+
+  .card__title{
+    font-size: 3rem;
+    line-height: 1.1;
+    font-family: "Lobster Two",sans-serif;
+    font-weight: 700;
+    margin-bottom: .75rem;
+  }
+
+  .card__ingredients,.card__method,.card__garnish,.card__served{
+    font-size: 2rem;
+    line-height: 1.5;
+    margin-bottom: .75rem;
+    font-family: "Lobster Two",sans-serif;
+    font-weight: 400;
+  }
+
+  .card__method{
+    
+  }
+
+  .card__garnish{
+    
+  }
+
+  .card__served{
+    
+  }
+
+  .card__bartender{
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    font-size: 2rem;
+    font-family: 'Dancing Script', cursive;
+    padding-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    justify-self: start;
+    align-self: end;
+  }
+
+  .card__button{
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    padding-bottom: 1.5rem;
+    padding-right: 1.5rem;
+    display: grid;
+    align-items: end;
+  }
+
+  #edit-btn{
+    justify-self: end;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-family: "Montserrat",sans-serif;
+    font-size: 2rem;
+  }
+
+  @media only screen and (min-width: 56em){
+
+    .card{
+    display: grid;
+    grid-template-columns: 300px repeat(2, 1fr);
+    grid-template-rows: 1fr auto;
+    }
+  
+    .card__image{
+      grid-column: 1 / 2;
+      grid-row: 1 / 3;
+  
+    }
+  
+    .card__content{
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+      justify-self:right;
+    }
+    
+    .card__ingredients{
+      grid-column: 3 / 4;
+      grid-row: 1 / 2;
+      
+    }
+  
+    .card__bartender{
+      grid-row: 2 / 3;
+      grid-column: 2 / 3;
+      margin-bottom: 0;
+      
+    }
+  
+    .card__button{
+      grid-column: 3 / 4;
+      grid-row: 2 / 3
+    }
+  
+  
+  }
+  

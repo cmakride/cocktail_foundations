@@ -33,9 +33,10 @@ Another Reason this app was created; While bartending you sometimes get a reques
 ## Future Enhancements:
 
 1. light/dark mode
-2. FlashCard Flip Animation
-3. Mobile Response
-4. Large Screen Response
+2. Mobile Responsive NavBar
+3. FlashCard Flip Animation
+4. Mobile Response
+5. Large Screen Response
 
 
 

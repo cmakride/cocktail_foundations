@@ -1,4 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster+Two:wght@400;700&family=Montserrat:wght@500&display=swap');
+
+/* The Universal Selector */
+*, /* All elements*/
+*::before, /* All ::before pseudo-elements */
+*::after { /* All ::after pseudo-elements */
+  /* height & width will now include border & padding by default
+     but can be over-ridden as needed */
+  box-sizing: inherit;
+}
+
+/* resets font size to be 62.5% of the user preference - 
+     in most browser configurations this will be 10px */
+:root {
+    font-size: 62.5%
+}
 
 
 html{
@@ -105,21 +121,6 @@ width: 25px;
 
 /* ? End of Search Bar Styling */
 
-/* The Universal Selector */
-*, /* All elements*/
-*::before, /* All ::before pseudo-elements */
-*::after { /* All ::after pseudo-elements */
-  /* height & width will now include border & padding by default
-     but can be over-ridden as needed */
-  box-sizing: inherit;
-}
-
-/* resets font size to be 62.5% of the user preference - 
-     in most browser configurations this will be 10px */
-:root {
-    font-size: 62.5%
-}
-
 
 section {
   width: 100%;
@@ -153,6 +154,11 @@ section {
   position: relative;
   display: flex;
   flex-direction: row;
+
+  
+  
+  /* font-weight: italic; */
+
   
   flex-wrap: wrap;
   align-items: center;
@@ -209,7 +215,11 @@ section {
 
 .card .info h1{
   margin: 0;
-  font-size: 3rem;
+  font-size: 4rem;
+  font-family: "Lobster Two",sans-serif;
+  font-weight: bold;
+  font-weight: 700;
+  font-weight: italic;
 }
 
 .hidden{

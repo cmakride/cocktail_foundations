@@ -1,6 +1,6 @@
 # Cocktail Foundations
 
-## [Link To The App Here](https://cocktail-foundations.herokuapp.com/cocktails "Cocktail Foundations").
+## [Link To The App Here](https://cocktail-foundations.herokuapp.com/cocktails "Cocktail Foundations")
 
 ## About:
 This app is for studying cocktail recipes and being inspired by other cocktail creations. When you start at a new bar, you have to memorize all the signature cocktails. This app simplifies that process. 
@@ -29,6 +29,8 @@ Another Reason this app was created; While bartending you sometimes get a reques
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![Adobe Photoshop](https://img.shields.io/badge/adobe%20photoshop-%2331A8FF.svg?style=for-the-badge&logo=adobe%20photoshop&logoColor=white)
 
+
+### [Link to Trello board with wireframe, ERD diagram](https://trello.com/b/U4axbRnV/cocktail-foundations-app "Cocktail Foundations Trello")
                    
 ## Future Enhancements:
 

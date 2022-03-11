@@ -69,7 +69,7 @@ function create(req, res) {
 }
 
 function show(req, res) {
-  // console.log(req.user.profile._id)
+  
   Cocktail.findById(req.params.id)
     .populate("ingredients")
     .populate("bartender")

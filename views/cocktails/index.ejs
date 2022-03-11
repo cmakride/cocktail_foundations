@@ -1,5 +1,5 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/index.css" />
+  <link rel="stylesheet" href="/stylesheets/index.css" />
 
   </head>
 
@@ -50,13 +50,13 @@
 
     <!-- !Search Bar -->
     <section id="searchbar">
-    <form class="search-bar" action="/cocktails/search" method="GET">
-      <input id="search" class="form-control form-control-dark" type="search" name="name" placeholder="Search Cocktail..."
-        value="<%=cocktails.name%>" autocomplete="off" />
+      <form class="search-bar" action="/cocktails/search" method="GET">
+        <input id="search" class="form-control form-control-dark" type="search" name="name"
+          placeholder="Search Cocktail..." value="<%=cocktails.name%>" autocomplete="off" />
         <button type="submit"><img src="/images/assets/search.png"></button>
-    </form>
+      </form>
     </section>
-<!-- !End Search Bar -->
+    <!-- !End Search Bar -->
 
 
     <section>

@@ -1,78 +1,87 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/edit.css" />
+  <link rel="stylesheet" href="/stylesheets/edit.css" />
 
   <%- include('../partials/nav') %>
-  
-    <main class="card">
-      
-      <form id ="edit" action="/cocktails/<%=cocktail._id%>?_method=PUT" method="POST">
-        <label>
-          Name:
-          <input type="text" name="name" autocomplete="off" value="<%= cocktail.name %> ">
-        </label>
 
-        <label>
-          Method:
-          <input type="text" name="method" autocomplete="off" value="<%= cocktail.method %> ">
-        </label>
-        <label>
-          Garnish:
-          <input type="text" name="garnish" autocomplete="off" value="<%= cocktail.garnish %> ">
-        </label>
-        <label>
-          Served In:
-          <input type="text" name="servedIn" autocomplete="off" value="<%= cocktail.servedIn %> ">
-        </label>
-        <label>
-          image URL:
-          <input type="text" name="image" autocomplete="off" value="<%= cocktail.image %> ">
-        </label>
-
-        <button type="submit">Edit</button>
-      </form>
-
-      <!-- ! EDIT INGREDIENTS -->
-
-      <ul>
-        <% cocktail.ingredients.forEach((ingredient, idx)=> { %>
-          <li>
-            <%= cocktail.amounts[idx] %>
-              <%= ingredient.name %>
-                <form action="/cocktails/<%=cocktail._id%>/ingredients/<%=idx%>?_method=DELETE" method="POST">
-                  <button>X</button>
-                </form>
-          </li>
-          <% }) %>
-      </ul>
-
-      <form id="add-per-to-ingredient" action="/cocktails/<%=cocktail._id%>/ingredients?_method=POST" method="post">
-        <button type="submit">Add Ingredient</button>
-        <select name="ingredientId">
-          <% ingredientsNotInRecipe.forEach(ingredient=> { %>
-            <option value="<%=ingredient._id%>">
-              <%=ingredient.name%>
-            </option>
-            <% }) %>
-        </select>
-        <label>
-          Amount:
-          <input type="text" name="amount" autocomplete="off">
-        </label>
-
-      </form>
-
-      <!-- ! END INGREDIENTS -->
+    <main>
+      <section class="card">
 
 
-      <!-- ? where want to add in editing for just Chris To edit -->
+        <form id="editors" action="/cocktails/<%=cocktail._id%>?_method=PUT" method="POST">
 
-    <!-- !Delete Cocktail Button -->
-    <form action="/cocktails/<%=cocktail._id%>?_method=DELETE" method="POST">
-      <button>Delete This Cocktail</button>
-    </form>
+          <label class="input-bar">
+            Name:
+            <input class="input" type="text" name="name" autocomplete="off" value="<%= cocktail.name %> ">
+          </label>
+
+          <label class="input-bar">
+            Method:
+            <input class="input" type="text" name="method" autocomplete="off" value="<%= cocktail.method %> ">
+          </label>
+
+          <label class="input-bar">
+            Garnish:
+            <input class="input" type="text" name="garnish" autocomplete="off" value="<%= cocktail.garnish %> ">
+          </label>
+
+          <label class="input-bar">
+            Served In:
+            <input class="input" type="text" name="servedIn" autocomplete="off" value="<%= cocktail.servedIn %> ">
+          </label>
+
+          <label class="input-bar">
+            image URL:
+            <input class="input" type="text" name="image" autocomplete="off" value="<%= cocktail.image %> ">
+          </label>
+
+          <button class="edit-btn" type="submit">Save</button>
+        </form>
+
+        <!-- ! EDIT INGREDIENTS -->
+        <section id="ingredients">
+          <ul>
+            <h1>Ingredients</h1>
+            <% cocktail.ingredients.forEach((ingredient, idx)=> { %>
+              <li>
+                <%= cocktail.amounts[idx] %>
+                  <%= ingredient.name %>
+                    <form action="/cocktails/<%=cocktail._id%>/ingredients/<%=idx%>?_method=DELETE" method="POST">
+                      <button>X</button>
+                    </form>
+              </li>
+              <% }) %>
+          </ul>
 
 
 
+          <form id="add-per-to-ingredient" action="/cocktails/<%=cocktail._id%>/ingredients?_method=POST" method="post">
+            <button type="submit">Add Ingredient</button>
+            <select name="ingredientId">
+              <% ingredientsNotInRecipe.forEach(ingredient=> { %>
+                <option value="<%=ingredient._id%>">
+                  <%=ingredient.name%>
+                </option>
+                <% }) %>
+            </select>
+            <label>
+              Amount:
+              <input type="text" name="amount" autocomplete="off">
+            </label>
+
+          </form>
+
+          <!-- !Delete Cocktail Button -->
+          <form action="/cocktails/<%=cocktail._id%>?_method=DELETE" method="POST">
+            <button id="delete-btn">Delete This Cocktail</button>
+          </form>
+
+        </section>
+
+        <!-- ! END INGREDIENTS -->
+
+
+
+      </section>
 
     </main>
 

@@ -109,18 +109,6 @@ nav{
     font-weight: 400;
   }
 
-  .card__method{
-    
-  }
-
-  .card__garnish{
-    
-  }
-
-  .card__served{
-    
-  }
-
   .card__bartender{
     grid-column: 1 / 2;
     grid-row: 3 / 4;

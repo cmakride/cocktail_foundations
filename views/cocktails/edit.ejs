@@ -1,9 +1,10 @@
 <%- include('../partials/html-head') %>
-
+<link rel="stylesheet" href="/stylesheets/edit.css" />
 
   <%- include('../partials/nav') %>
   
-    <main>
+    <main class="card">
+      
       <form id ="edit" action="/cocktails/<%=cocktail._id%>?_method=PUT" method="POST">
         <label>
           Name:

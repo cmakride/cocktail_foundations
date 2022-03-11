@@ -6,7 +6,7 @@ let arrayIndexes = []
 
 //CACHED ELEMENTS Getting Main and getting number of children representing number of cocktails
 const cocktailBin = document.querySelector("main")
-const cocktailCount = cocktailBin.children.length - 1
+const cocktailCount = cocktailBin.children.length
 const nextButton = document.getElementById("next-flashcard")
 const refreshBtn = document.getElementById("refresh")
 

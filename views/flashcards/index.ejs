@@ -1,7 +1,7 @@
 <%- include('../partials/html-head') %>
 <link id="favicon" rel="icon" href="images/Favicon_Martini_Glass.png" type="image/png" sizes="32x32">
 <script defer src="./javascript/main.js"></script>
-<link rel="stylesheet" href="/stylesheets/cards.css" />
+<link rel="stylesheet" href="/stylesheets/index.css" />
 <%- include('../partials/nav') %>
 
 
@@ -11,10 +11,10 @@
  
   <div id = "cocktail_0<%=idx%>" class="hidden">
     <div class="card">
-      <img src="/images/cocktails/cocktail_gin_tonic.png">
+      <img src="<%=cocktail.image%>">
       <div class="info">
         <h1>
-          <a href="/cocktails/<%=cocktail._id%>">
+          <a href="/cocktails/<%=cocktail._id%>" style="text-decoration: none">
             <%= cocktail.name %>
           </a>
         </h1>

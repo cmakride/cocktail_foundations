@@ -132,8 +132,7 @@ section {
   justify-content: space-around;
   /* align-items: center; */
   /* Use a system font, if none are available use an available sans-sarif font */
-  font-family: 'Lato', sans-serif, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: "Lobster Two", sans-serif, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   margin: 0;
   gap: 25px;
   

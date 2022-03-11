@@ -130,6 +130,7 @@ nav{
     padding-left: 1.5rem;
     justify-self: start;
     align-self: end;
+    margin-bottom: 0;
   }
 
   .card__button{
@@ -168,7 +169,7 @@ nav{
       grid-row: 1 / 2;
       justify-self:right;
     }
-    
+
     .card__ingredients{
       grid-column: 3 / 4;
       grid-row: 1 / 2;

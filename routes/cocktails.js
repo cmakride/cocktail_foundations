@@ -14,16 +14,16 @@ router.get('/',cocktailsCtrl.index)
 router.get('/search',cocktailsCtrl.searchIndex)
 
 //GET - localhost:3000/cocktails/new
-router.get('/new',cocktailsCtrl.new)
+router.get('/new',isLoggedIn,cocktailsCtrl.new)
 
 //GET - localhost:3000/cocktails/:id
 router.get('/:id',cocktailsCtrl.show)
 
 //GET - localhost:3000/cocktails/:id/edit
-router.get('/:id/edit',cocktailsCtrl.edit)
+router.get('/:id/edit',isLoggedIn,cocktailsCtrl.edit)
 
 //PUT After editing a cocktail and click edit button - localhost:3000/cocktails/:id
-router.put('/:id',cocktailsCtrl.update)
+router.put('/:id',isLoggedIn,cocktailsCtrl.update)
 
 //POST - localhost:3000/cocktails
 //!NEED TO CREATE ANOTHER MIDDLEWARE TO CHECK IF A USER is logged in
